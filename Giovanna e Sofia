@@ -1,0 +1,53 @@
+// C++ code
+
+//Carros
+
+int verdeCarro=8;
+int amareloCarro=9;
+int vermelhoCarro=10;
+
+//Led dos pedestres
+
+int verdePed=11;
+int vermelhoPed=12;
+
+void setup()
+{
+  pinMode(verdeCarro, OUTPUT);
+  pinMode(amareloCarro, OUTPUT);
+  pinMode(vermelhoCarro, OUTPUT);
+  
+  pinMode(verdePed, OUTPUT);
+  pinMode(vermelhoPed, OUTPUT);
+}
+
+void loop(){
+  digitalWrite(verdeCarro, HIGH);
+  digitalWrite(amareloCarro, LOW);
+  digitalWrite(vermelhoCarro, LOW);
+  
+  digitalWrite(vermelhoPed, HIGH);
+  digitalWrite(verdePed, LOW);
+  delay(5000); // Wait for 5000 millisecond(s)
+  
+  digitalWrite(verdeCarro, LOW);
+  digitalWrite(amareloCarro, HIGH);
+  delay(2000); // Wait for 2000 millisecond(s)
+  
+  digitalWrite(amareloCarro, LOW);
+  digitalWrite(vermelhoCarro, HIGH);
+  
+  digitalWrite(vermelhoPed, LOW);
+  digitalWrite(verdePed, HIGH);
+  delay(4000); // Wait for 4000 millisecond(s)
+  
+  digitalWrite(verdePed, LOW);
+  for(int i=0; i<4; i++){
+    digitalWrite(vermelhoPed, HIGH);
+    delay(250);
+    digitalWrite(vermelhoPed, LOW);
+    delay(250);
+  }
+  
+  digitalWrite(vermelhoPed, HIGH);
+}
